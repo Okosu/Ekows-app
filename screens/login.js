@@ -1,14 +1,22 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import {StyleSheet,Text,View,Image,TextInput,Button,TouchableOpacity,} from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TextInput,
+  Button,
+  TouchableOpacity,
+} from "react-native";
 
-const Stack = createNativeStackNavigator();
 export default function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   return (
     <View style={styles.container}>
+      <Image style={styles.image} source={require("./assets/log2.png")} />
 
       <StatusBar style="auto" />
       <View style={styles.inputView}>
@@ -82,6 +90,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 40,
-    backgroundColor: "#FF1493",
+    backgroundColor: "#E0B0FF",
+  },
+  text: {
+      colour:"white",
+      fontWeight: "bold",
   },
 });
