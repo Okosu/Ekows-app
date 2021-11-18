@@ -11,44 +11,70 @@ import {
 } from "react-native";
 
 
-export function login({navigation}) {
+export function Checkout({navigation}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require("../assets/log2.png")} />
 
       <StatusBar style="auto" />
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Email."
+          placeholder="Fullname"
+          placeholderTextColor="#003f5c"
+          onChangeText={(email) => setEmail(email)}
+        />
+      </View>
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.TextInput}
+          placeholder="Phone Number"
+          placeholderTextColor="#003f5c"
+          onChangeText={(email) => setEmail(email)}
+        />
+      </View>
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.TextInput}
+          placeholder="Address"
+          placeholderTextColor="#003f5c"
+          onChangeText={(email) => setEmail(email)}
+        />
+      </View>
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.TextInput}
+          placeholder="Debit Card Number"
+          placeholderTextColor="#003f5c"
+          onChangeText={(email) => setEmail(email)}
+        />
+      </View>
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.TextInput}
+          placeholder="Debit Card Account Name"
+          placeholderTextColor="#003f5c"
+          onChangeText={(email) => setEmail(email)}
+        />
+      </View>
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.TextInput}
+          placeholder="CVV"
           placeholderTextColor="#003f5c"
           onChangeText={(email) => setEmail(email)}
         />
       </View>
 
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.TextInput}
-          placeholder="Password."
-          placeholderTextColor="#003f5c"
-          secureTextEntry={true}
-          onChangeText={(password) => setPassword(password)}
-        />
-      </View>
-
-      <TouchableOpacity>
-        <Text style={styles.forgot_button}>Forgot Password?</Text>
-      </TouchableOpacity>
-
+     
       <TouchableOpacity style={styles.loginBtn}>
         <Text style={styles.text}
             onPress={() => {
-                navigation.navigate('ProductsList');
+                navigation.navigate('Orderconfirm');
             }}
-            >LOGIN</Text>
+            >CHECKOUT</Text>
       </TouchableOpacity>
     </View>
   );
@@ -67,8 +93,7 @@ const styles = StyleSheet.create({
   },
 
   inputView: {
-    borderColor: "black ",
-    backgroundColor: "#FFFDD0",
+    backgroundColor: "#ADD8E6",
     borderRadius: 30,
     width: "70%",
     height: 45,
@@ -96,7 +121,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 40,
-    backgroundColor: "#808080",
+    backgroundColor: "#ffcccb",
   },
   text: {
    color: "white",

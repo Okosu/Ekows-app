@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
 import { CartContext } from '../CartContext';
 export function Cart ({navigation}) {
 const {items, getItemsCount, getTotalPrice} = useContext(CartContext);
@@ -12,7 +12,7 @@ const {items, getItemsCount, getTotalPrice} = useContext(CartContext);
     return (
        <View style={styles.cartLineTotal}>
           <Text style={[styles.lineLeft, styles.lineTotal]}>Total</Text>
-          <Text style={styles.lineRight}>$ {total}</Text>
+          <Text style={styles.lineRight}>GH₵ {total}</Text>
        </View>
     );
   }
@@ -20,12 +20,13 @@ function renderItem({item}) {
     return (
        <View style={styles.cartLine}>
           <Text style={styles.lineLeft}>{item.product.name} x {item.qty}</Text>
-          <Text style={styles.lineRight}>$ {item.totalPrice}</Text>
+          <Text style={styles.lineRight}> GH₵{item.totalPrice}</Text>
        </View>
     );
   }
 
   return (
+    <View>
     <FlatList
       style={styles.itemsList}
       contentContainerStyle={styles.itemsListContainer}
@@ -34,6 +35,15 @@ function renderItem({item}) {
       keyExtractor={(item) => item.product.id.toString()}
       ListFooterComponent={Totals}
     />
+
+<TouchableOpacity style={styles.loginBtn}>
+        <Text style={styles.text}
+            onPress={() => {
+                navigation.navigate('Checkout');
+            }}
+            >PROCEED TO CHECKOUT</Text>
+      </TouchableOpacity>
+  </View>
   );
 }
 const styles = StyleSheet.create({
@@ -68,5 +78,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#eeeeee',
     paddingVertical: 8,
     marginHorizontal: 8,
+  },
+  text: {
+    color: "white",
+    fontWeight: "bold",
+    alignItems: "center",
+   },
+   loginBtn: {
+    width: "60%",
+    borderRadius: 25,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 40,
+    backgroundColor: "#ffcccb",
+    marginLeft: "22%",
   },
 });

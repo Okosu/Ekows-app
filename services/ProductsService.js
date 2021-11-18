@@ -24,14 +24,14 @@ const PRODUCTS = [
         id: 103,
         name: 'Balenciaga',
         price: 2000,
-        image: require('../assets/products/Balenciaga-103.png'),
+        image: require('../assets/products/balenciaga-103.jpg'),
         description: 'Balenciaga is a very quality shoe.'
     },
     {
         id: 104,
-        name: 'Corn-Flakes',
+        name: 'Cornflakes',
         price: 100,
-        image: require('../assets/products/Corn-Flakes-104.jpg'),
+        image: require('../assets/products/Cornflakes-104.jpg'),
         description: 'Corn-Flakes is a very nutrious meal'
     }
     
